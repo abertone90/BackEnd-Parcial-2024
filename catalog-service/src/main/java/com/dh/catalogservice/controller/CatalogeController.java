@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-
+@RequestMapping("/catalog")
 public class CatalogeController {
 
     @Autowired
     private IMovieClient iMovieClient;
 
-    @GetMapping("/catalog/{genre}")
+    @GetMapping("/{genre}")
     public ResponseEntity<List<Movie>> getCatalogByGenre (@PathVariable String genre) {
         return iMovieClient.getMovieByGenre(genre);
     }

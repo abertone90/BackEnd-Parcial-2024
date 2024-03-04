@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1e0b0a6-decc-4b16-b038-0af0e8854f5a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/controller/CatalogeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/controller/CatalogeController.java" afterDir="false" />
     </list>
@@ -38,22 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CatalogServiceApplication.executor": "Run",
-    "Application.ConfigServerApplication.executor": "Run",
-    "Application.EurekaServerApplication.executor": "Run",
-    "Application.GatewayApplication.executor": "Run",
-    "Application.MovieServiceApplication.executor": "Run",
-    "Maven.gateway [clean].executor": "Run",
-    "Maven.gateway [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CatalogServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MovieServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gateway [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gateway [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrador/Documents/Digital Tech Developer/Especializacion/Proyecto/BackEnd-Parcial-2024&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.CatalogServiceApplication">
+}</component>
+  <component name="RunManager" selected="Application.GatewayApplication">
     <configuration name="CatalogServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.catalogservice.CatalogServiceApplication" />
       <module name="catalog-service" />
@@ -94,6 +96,8 @@
       </method>
     </configuration>
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.gateway.gateway.GatewayApplication" />
       <module name="gateway" />
       <extension name="coverage">
@@ -121,9 +125,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.CatalogServiceApplication" />
         <item itemvalue="Application.MovieServiceApplication" />
-        <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
         <item itemvalue="Application.ConfigServerApplication" />
       </list>
@@ -146,5 +150,16 @@
       <updated>1709565306261</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
