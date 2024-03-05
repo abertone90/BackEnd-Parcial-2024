@@ -11,4 +11,7 @@ import java.util.List;
 public class Catalog {
     private String genre;
     private List<Movie> movies;
+
+    public void setLoadBalancerResponse(String response) {
+    }
 }
