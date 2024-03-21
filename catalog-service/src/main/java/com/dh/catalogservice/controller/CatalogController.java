@@ -1,8 +1,11 @@
 package com.dh.catalogservice.controller;
 import com.dh.catalogservice.client.IMovieClient;
+import com.dh.catalogservice.client.ISerieClient;
 import com.dh.catalogservice.model.Catalog;
 import com.dh.catalogservice.model.Movie;
+import com.dh.catalogservice.model.Serie;
 import com.dh.catalogservice.service.LoadBalancer;
+import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -27,9 +30,11 @@ public class CatalogController {
     }
 
     @Autowired
+    private ISerieClient iSerieClient;
+    @Autowired
     private IMovieClient iMovieClient;
 
-    @GetMapping("/{genre}")
+    @GetMapping("/movie/{genre}")
     ResponseEntity<Catalog> getMovieByGenre(@PathVariable String genre) {
         // Use the LoadBalancer to choose an instance of "movie-service"
         String loadBalancerResponse = loadBalancer.callOtherService();
@@ -45,10 +50,29 @@ public class CatalogController {
     }
 
 
-    @PostMapping("/save")
+    @PostMapping("/movie/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
         return ResponseEntity.ok().body(iMovieClient.saveMovie(movie));
     }
+
+
+    @PostMapping("/serie/save")
+    public ResponseEntity<String> saveSerie(@RequestBody Serie serie) {
+        String serieId = iSerieClient.saveSerie(serie);
+        return ResponseEntity.ok().body(serieId);
+    }
+
+
+
+    @GetMapping("/serie/{genre}")
+    public ResponseEntity<List<Serie>> getSerieByGenre(@PathVariable String genre) {
+        List<Serie> series = iSerieClient.getSerieByGenre(genre);
+        return ResponseEntity.ok().body(series);
+    }
+
+
+
+
 
     // For debugging purposes
     @GetMapping("/hello")
