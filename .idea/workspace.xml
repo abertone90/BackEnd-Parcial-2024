@@ -6,6 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d1e0b0a6-decc-4b16-b038-0af0e8854f5a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-service/src/main/java/com/dh/movieservice/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/src/main/java/com/dh/movieservice/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/SerieServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/SerieServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/controller/SerieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/controller/SerieController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season$Chapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season$Chapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/repository/SerieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/repository/SerieRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/service/SerieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/service/SerieService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +81,7 @@
       <recent name="C:\Users\Administrador\Documents\Digital Tech Developer\Especializacion\Proyecto\BackEnd-Parcial-2024" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CatalogServiceApplication">
+  <component name="RunManager" selected="Application.SerieServiceApplication">
     <configuration name="CatalogServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.catalogservice.CatalogServiceApplication" />
       <module name="catalog-service" />
@@ -123,7 +134,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SerieServiceApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="SerieServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.serieservice.SerieServiceApplication" />
       <module name="serie-service" />
       <extension name="coverage">
@@ -137,17 +148,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.GatewayApplication" />
       <item itemvalue="Application.EurekaServerApplication" />
       <item itemvalue="Application.SerieServiceApplication" />
       <item itemvalue="Application.CatalogServiceApplication" />
-      <item itemvalue="Application.GatewayApplication" />
       <item itemvalue="Application.MovieServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SerieServiceApplication" />
         <item itemvalue="Application.CatalogServiceApplication" />
         <item itemvalue="Application.MovieServiceApplication" />
-        <item itemvalue="Application.SerieServiceApplication" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
       </list>

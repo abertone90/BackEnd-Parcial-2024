@@ -2,8 +2,11 @@ package com.dh.movieservice.controller;
 
 import com.dh.movieservice.model.Movie;
 import com.dh.movieservice.service.MovieService;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -11,6 +14,8 @@ import java.util.List;
 @RequestMapping("/movie")
 public class MovieController {
     private final MovieService movieService;
+
+
 
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
