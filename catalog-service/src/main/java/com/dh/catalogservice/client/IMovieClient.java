@@ -14,10 +14,10 @@ import java.util.List;
 @FeignClient(name = "movie-service")
 public interface IMovieClient {
 
-    @GetMapping("/movies/{genre}")
+    @GetMapping("/movie/{genre}")
     List<Movie> getMovieByGenre(@PathVariable String genre);
 
-    @PostMapping("/movies/save")
+    @PostMapping("/movie/save")
     Movie saveMovie(@RequestBody Movie movie);
 
 }

@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d1e0b0a6-decc-4b16-b038-0af0e8854f5a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/controller/CatalogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/controller/CatalogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-service/src/main/java/com/dh/movieservice/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/src/main/java/com/dh/movieservice/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/client/IMovieClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/client/IMovieClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Administrador/Downloads/Parcial202402-main/Parcial202402-main/serie-service",
+    "last_opened_file_path": "C:/Users/Administrador/Downloads/BackEnd-Parcial-2024",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -75,7 +72,7 @@
       <recent name="C:\Users\Administrador\Documents\Digital Tech Developer\Especializacion\Proyecto\BackEnd-Parcial-2024" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CatalogServiceApplication">
+  <component name="RunManager" selected="Application.MovieServiceApplication">
     <configuration name="CatalogServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.catalogservice.CatalogServiceApplication" />
       <module name="catalog-service" />
@@ -103,8 +100,9 @@
       </method>
     </configuration>
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="20" />
       <option name="MAIN_CLASS_NAME" value="com.gateway.gateway.GatewayApplication" />
-      <module name="gateway" />
+      <module name="api-gateway" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.gateway.gateway.*" />
@@ -115,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieServiceApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="MovieServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.movieservice.MovieServiceApplication" />
       <module name="movie-service" />
       <extension name="coverage">
@@ -128,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SerieServiceApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="SerieServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.serieservice.SerieServiceApplication" />
       <module name="serie-service" />
       <extension name="coverage">
@@ -150,10 +148,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MovieServiceApplication" />
         <item itemvalue="Application.CatalogServiceApplication" />
         <item itemvalue="Application.SerieServiceApplication" />
         <item itemvalue="Application.GatewayApplication" />
-        <item itemvalue="Application.MovieServiceApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
       </list>
     </recent_temporary>
