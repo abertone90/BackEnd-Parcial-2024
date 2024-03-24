@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
+import com.dh.serieservice.model.Serie;
 
 @Component //@Repository @Service
 @RequiredArgsConstructor

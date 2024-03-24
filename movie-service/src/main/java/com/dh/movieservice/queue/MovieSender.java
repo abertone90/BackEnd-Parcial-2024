@@ -1,10 +1,11 @@
 package com.dh.movieservice.queue;
 
-import com.example.msregistro.domain.models.Persona;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
+import com.dh.movieservice.model.Movie;
 
 @Component //@Repository @Service
 @RequiredArgsConstructor
