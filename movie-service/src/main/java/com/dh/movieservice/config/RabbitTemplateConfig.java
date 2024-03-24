@@ -1,4 +1,4 @@
-package com.dh.movieservice.core.config;
+package com.dh.movieservice.config;
 
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
