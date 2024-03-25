@@ -1,27 +1,32 @@
 package com.dh.catalogservice.queue;
 
-import com.example.mspersona.api.services.PersonaService;
-import com.example.mspersona.domain.models.Persona;
+import com.dh.catalogservice.model.Movie;
+import com.dh.catalogservice.repository.IMovieRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MovieListener {
+    private final IMovieRepository movieRepository;
 
-    private final MovieService service;
-
-    public MovieListener(MovieService service) {
-        this.service = service;
+    @Autowired
+    public MovieListener(IMovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
     }
 
-    @RabbitListener(queues = {"${queue.movie.name}"})
-    public void receive(@Payload Movie movie) {
+    @RabbitListener(queues = "${queue.movie.name}")
+    public void receive(String movieJson) {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            Movie movie = objectMapper.readValue(movieJson, Movie.class);
+
+            movieRepository.save(movie);
+
+            System.out.println("Película guardada en la base de datos: " + movie.getId());
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        service.save(movie);
     }
 }
