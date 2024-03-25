@@ -30,6 +30,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
+    //implementamos circuit breaker de manera que si el servicio movie o serie esta desconectado/fallando, al arrojar una exepcion tipo feing, se intente 3 veces
+    //realizar la misma accion, y si falla que aumente el conteo de fallos, al llegar al % que pide el circuito, se cierra durante 15 segundos antes de volver
+    //a aceptar solicitudes, se despliega un mensaje estilo "Servicio (puede ser movie,catalogo, o serie) is currently unavailable" en caso de que falle al realizar
+    //los reintentos
+
 
     private final LoadBalancer loadBalancer;
 
@@ -51,6 +56,7 @@ public class CatalogController {
 
 
 
+//endpoint for filter movie by genre in his own database
     @CircuitBreaker(name = "catalog", fallbackMethod = "movieServiceFallbackMethod")
     @Retry(name = "catalog")
     @GetMapping("/movie/{genre}")
@@ -86,6 +92,7 @@ public class CatalogController {
     }
 
 
+    //endpoint for filter serie by genre in his own database
     @CircuitBreaker(name = "catalog", fallbackMethod = "serieServiceFallbackMethod")
     @Retry(name = "catalog")
     @GetMapping("/serie/{genre}")
@@ -113,12 +120,8 @@ public class CatalogController {
                 .body("Catalog service is currently unavailable");
     }
 
-    // For debugging purposes
-    @GetMapping("/hello")
-    public String getHello() {
-        return "Hello World!";
-    }
 
+    //endpoint for filter movie in catalog database
     @CircuitBreaker(name = "catalog", fallbackMethod = "catalogServiceFallbackMethod")
     @Retry(name = "catalog")
     @GetMapping("/v1/movie/{genre}")
@@ -127,6 +130,7 @@ public class CatalogController {
         return ResponseEntity.ok().body(movies);
     }
 
+    //endpoint for filter serie in catalog database
     @CircuitBreaker(name = "catalog", fallbackMethod = "catalogServiceFallbackMethod")
     @Retry(name = "catalog")
     @GetMapping("/v1/serie/{genre}")
