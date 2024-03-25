@@ -8,6 +8,10 @@ import com.dh.catalogservice.repository.IMovieRepository;
 import com.dh.catalogservice.repository.ISerieRepository;
 import com.dh.catalogservice.service.LoadBalancer;
 import com.netflix.discovery.converters.Auto;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -18,8 +22,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
-
+@Slf4j
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
@@ -59,6 +64,12 @@ public class CatalogController {
         return ResponseEntity.ok().body(catalog);
     }
 
+    //fallback para lo de arriba
+    private List<Movie> emptyListFallbackMethod(CallNotPermittedException e) {
+        return new ArrayList<>();
+    }
+
+
 
     @PostMapping("/movie/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
@@ -73,7 +84,8 @@ public class CatalogController {
     }
 
 
-
+    @CircuitBreaker(name = "catalog", fallbackMethod = "emptyListFallbackMethod")
+    @Retry(name = "catalog")
     @GetMapping("/serie/{genre}")
     public ResponseEntity<List<Serie>> getSerieByGenre(@PathVariable String genre) {
         List<Serie> series = iSerieClient.getSerieByGenre(genre);
