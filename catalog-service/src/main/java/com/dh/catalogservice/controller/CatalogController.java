@@ -30,10 +30,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
-    //implementamos circuit breaker de manera que si el servicio movie o serie esta desconectado/fallando, al arrojar una exepcion tipo feing, se intente 3 veces
-    //realizar la misma accion, y si falla que aumente el conteo de fallos, al llegar al % que pide el circuito, se cierra durante 15 segundos antes de volver
-    //a aceptar solicitudes, se despliega un mensaje estilo "Servicio (puede ser movie,catalogo, o serie) is currently unavailable" en caso de que falle al realizar
-    //los reintentos
+
+
+    /**
+     * Implementación del circuit breaker para gestionar fallos en el servicio de películas o series.
+     * Si el servicio de película o serie está desconectado o falla al arrojar una excepción tipo Feign,
+     * se intentará la misma acción hasta tres veces. Si continúa fallando, se aumentará el contador de fallos.
+     * Cuando el contador de fallos alcanza un porcentaje determinado, el circuito se cerrará durante 15 segundos
+     * antes de volver a aceptar solicitudes. Se mostrará un mensaje indicando que el servicio está temporalmente
+     * no disponible en caso de fallo tras los reintentos.
+     */
+
 
 
     private final LoadBalancer loadBalancer;
