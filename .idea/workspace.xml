@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d1e0b0a6-decc-4b16-b038-0af0e8854f5a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-service/src/main/java/com/dh/movieservice/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/src/main/java/com/dh/movieservice/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/SerieServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/SerieServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/controller/SerieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/controller/SerieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season$Chapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season$Chapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie$Season.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/model/Serie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/repository/SerieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/repository/SerieRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/service/SerieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/serie-service/target/classes/com/dh/serieservice/service/SerieService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/controller/CatalogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/controller/CatalogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/model/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/model/Serie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +61,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrador/Downloads/Parcial202402-main/Parcial202402-main/serie-service&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrador/Documents/Digital Tech Developer/Especializacion/Rabbit/BackEnd-Parcial-2024&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -81,7 +72,7 @@
       <recent name="C:\Users\Administrador\Documents\Digital Tech Developer\Especializacion\Proyecto\BackEnd-Parcial-2024" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SerieServiceApplication">
+  <component name="RunManager" selected="Application.CatalogServiceApplication">
     <configuration name="CatalogServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dh.catalogservice.CatalogServiceApplication" />
       <module name="catalog-service" />
@@ -110,7 +101,7 @@
     </configuration>
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gateway.gateway.GatewayApplication" />
-      <module name="gateway" />
+      <module name="api-gateway" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.gateway.gateway.*" />
@@ -156,11 +147,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MovieServiceApplication" />
         <item itemvalue="Application.SerieServiceApplication" />
         <item itemvalue="Application.CatalogServiceApplication" />
-        <item itemvalue="Application.MovieServiceApplication" />
-        <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.GatewayApplication" />
       </list>
     </recent_temporary>
   </component>

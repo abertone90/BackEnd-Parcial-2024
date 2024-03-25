@@ -13,6 +13,8 @@ public class Movie {
     private String genre;
     private String urlStream;
 
+    public Movie() {
+    }
     public Movie(Long id, String name, String genre, String urlStream) {
         this.id = id;
         this.name = name;

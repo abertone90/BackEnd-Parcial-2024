@@ -4,10 +4,17 @@ import com.dh.catalogservice.client.ISerieClient;
 import com.dh.catalogservice.model.Catalog;
 import com.dh.catalogservice.model.Movie;
 import com.dh.catalogservice.model.Serie;
+import com.dh.catalogservice.repository.IMovieRepository;
+import com.dh.catalogservice.repository.ISerieRepository;
 import com.dh.catalogservice.service.LoadBalancer;
 import com.netflix.discovery.converters.Auto;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +23,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
+@Slf4j
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
@@ -34,9 +43,18 @@ public class CatalogController {
     @Autowired
     private IMovieClient iMovieClient;
 
+    @Autowired
+    private IMovieRepository iMovieRepository;
+
+    @Autowired
+    private ISerieRepository iSerieRepository;
+
+
+
+    @CircuitBreaker(name = "catalog", fallbackMethod = "movieServiceFallbackMethod")
+    @Retry(name = "catalog")
     @GetMapping("/movie/{genre}")
     ResponseEntity<Catalog> getMovieByGenre(@PathVariable String genre) {
-        // Use the LoadBalancer to choose an instance of "movie-service"
         String loadBalancerResponse = loadBalancer.callOtherService();
         System.out.println("Load Balancer Response: " + loadBalancerResponse);
 
@@ -50,12 +68,17 @@ public class CatalogController {
     }
 
 
+
+
+    @CircuitBreaker(name = "catalog", fallbackMethod = "movieServiceFallbackMethod")
+    @Retry(name = "catalog")
     @PostMapping("/movie/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
         return ResponseEntity.ok().body(iMovieClient.saveMovie(movie));
     }
 
-
+    @CircuitBreaker(name = "catalog", fallbackMethod = "serieServiceFallbackMethod")
+    @Retry(name = "catalog")
     @PostMapping("/serie/save")
     public ResponseEntity<String> saveSerie(@RequestBody Serie serie) {
         String serieId = iSerieClient.saveSerie(serie);
@@ -63,20 +86,53 @@ public class CatalogController {
     }
 
 
-
+    @CircuitBreaker(name = "catalog", fallbackMethod = "serieServiceFallbackMethod")
+    @Retry(name = "catalog")
     @GetMapping("/serie/{genre}")
     public ResponseEntity<List<Serie>> getSerieByGenre(@PathVariable String genre) {
         List<Serie> series = iSerieClient.getSerieByGenre(genre);
         return ResponseEntity.ok().body(series);
     }
 
+    // Fallback method for serie down
+    private ResponseEntity<String> serieServiceFallbackMethod(Exception e) {
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body("Serie service is currently unavailable");
+    }
+
+    // Fallback method for movie down
+   private ResponseEntity<String> movieServiceFallbackMethod(Exception e) {
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body("Movie service is currently unavailable");
+    }
 
 
-
+    // Fallback method for Catalog down
+    private ResponseEntity<String> catalogServiceFallbackMethod(Exception e) {
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body("Catalog service is currently unavailable");
+    }
 
     // For debugging purposes
     @GetMapping("/hello")
     public String getHello() {
         return "Hello World!";
     }
+
+    @CircuitBreaker(name = "catalog", fallbackMethod = "catalogServiceFallbackMethod")
+    @Retry(name = "catalog")
+    @GetMapping("/v1/movie/{genre}")
+    ResponseEntity<List<Movie>> getMoviesByGenre(@PathVariable String genre) {
+        List<Movie> movies = iMovieRepository.findByGenre(genre);
+        return ResponseEntity.ok().body(movies);
+    }
+
+    @CircuitBreaker(name = "catalog", fallbackMethod = "catalogServiceFallbackMethod")
+    @Retry(name = "catalog")
+    @GetMapping("/v1/serie/{genre}")
+    ResponseEntity<List<Serie>> getSeriesByGenre(@PathVariable String genre) {
+        List<Serie> series = iSerieRepository.findByGenre(genre);
+        return ResponseEntity.ok().body(series);
+    }
+
 }

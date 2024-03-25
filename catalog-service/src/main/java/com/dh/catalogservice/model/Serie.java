@@ -6,13 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Document(collection = "Series")
 public class Serie {
 
     @Id
@@ -29,6 +30,8 @@ public class Serie {
         this.name = name;
         this.genre = genre;
     }
+
+
 
     @Getter
     @Setter
