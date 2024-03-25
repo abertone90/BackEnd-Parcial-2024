@@ -31,6 +31,8 @@ public class Serie {
         this.genre = genre;
     }
 
+
+
     @Getter
     @Setter
     public static class Season {
